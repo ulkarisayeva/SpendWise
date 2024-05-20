@@ -1,21 +1,59 @@
 *{
   margin: 0;
   padding: 0;
-  background: #333333;
   box-sizing: border-box;
 
 }
 
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  /* overflow-x: hidden; */
   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 
+.item{
+  border: 0px solid ;
+}
+.item-1{
+  position: absolute;
+  width: 16%;
+  height: 65%;
+  top: 15%;
+  right: 20%;
+  border-radius: 8%;
+}
+.item-1 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8%;
+
+}
+.item-2{
+  position: absolute;
+  width: 13%;
+  height: 25%;
+  bottom: 30%;
+  left: 55%;
+  border-radius: 8%;
+  flex-direction: column;
+  background-color: green;
+  color: antiquewhite;
+}
+.content {
+  width: 28%;
+  top: 15%;
+  left: 20%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+} 
+
+.content h1 {
+  font-size: 5rem;
+}
+.content a {
+  font-size: 2rem;
+}
 /* nav */
 .navbar-brand img{
   width: 100px;
@@ -23,7 +61,7 @@ body {
   margin-left: 10%;
 }
 .nav-item a {
-  color: #FEFEE2;
+  color: green;
   text-decoration: none;
   font-size: 10px;
 }
@@ -33,7 +71,6 @@ body {
 
 }
 .auth .btn{
-  color: #FEFEE2;
   font-size: 10px;
   line-height: 28px;
   border-radius: 10px;
@@ -44,33 +81,58 @@ body {
  .auth .login:hover{
   color: #67d365;
 }
-/* main-container */
-main {
-  /* display: flex; */
 
-}
-.head1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 
-}
+/* login */
 
-.head1 .box {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: 40px;
 
-}
-
-.head1 .box img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.modal {
+  background: transparent !important;
+  margin-top: 5%;
+  overflow-x: hidden;
   height: 100%;
-  object-fit: cover;
-  mix-blend-mode: screen;
-} 
+  width: 100%;
+}
+.modal-header{
+  flex-direction: column;
+}
+.info{
+  font-size: 15px;
+  display: block;
+  margin-bottom: 3px;
+}
+form{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.form-control::placeholder{
+  font-size: 10px;
+}
+.modal-content h5 {
+ font-size: 20px;
+ display: block;
+}
+
+.social-icon {
+  color: #1a8754;
+  flex-direction: row;
+  font-size: larger;
+  text-decoration: none;
+}
+.modal-footer{
+  padding-left: 10%;
+  flex-direction: column;
+}
+
+.modal-footer a,p {
+  text-decoration: none;
+}
+
+.modal-body button {
+  border: 0px solid green;
+  display: block;
+  margin: 0% auto;
+   width: fit-content;
+   margin-top: 15px;
+}
