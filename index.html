@@ -1,141 +1,146 @@
 <!DOCTYPE html>
-<head>
-  <title>Expense Tracker</title>
-  <link rel="stylesheet" href="./style.css" class="stylesheet">
+<html>
+  <head>
+   <title>My Profile</title>
+   <link rel="stylesheet" href="./style.css" class="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
 
 
-</head>
-<body>
-  <nav class="navbar">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="./images/spendwise-high-resolution-logo-transparent.png" alt="Logo"  height="20" class="align-text-top ms-md-4 ">
-              </a>
-                <ul class="nav nav-underline justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">How it works</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Payments</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" >About us</a>
-                </li>
+  <body>
+
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./images/spendwise-high-resolution-logo-transparent.png" alt="Logo"  height="13" class="log0">
+        </a>
+        </button>
+          <div class="nav d-flex"  id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link"  aria-current="page" href="#">
+                  <i class="fas fa-search" ></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> 
+                   <i class="fas fa-bell"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-light fa-user"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Log out</a></li>
                 </ul>
-                <div class="auth d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="login btn btn-sm" data-bs-toggle="modal" data-bs-target="#login-modal" type="button">Login</button>
-                  <button class="btn me-md-4 btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#signup-modal" type="button">Sign up</button>
-                </div>
-              </div>
-      </nav>
-   <section>
-      <div class="container">
-          <div class="item item-1">
-            <img src="./images/sea-5106327_1280.jpg">
+              </li>
+            </ul>
           </div>
-          <div class="item item-2">
-              <h3>20M+</h3>
+    </nav>
+     
+     <div class="user-container">
+          <!-- user-name section -->
+      <div class="user">
+          <h1>Hello, <span id="user-name"></span></h1>
+          <p>Your Expense Tracker</p>
+      </div>
+          <div class="progress-circle" data-degree="53" data-color="#fee800">
+            <h2 class="number">79 <span>$</span></h2>
+            <h5 id="income">Income</h5>
           </div>
-          <div class="content d-flex">
-            <h1 class="">Effortlessly track expenses with ease.
-            </h1>
-            <a class="text-success text-decoration-none">Get Started</a>
+          <div class="progress-circle" data-degree="100" data-color="#ff2972">
+            <h2 class="number">100 <span>$</span></h2>
+            <h5 id="budget">Budget</h5>
           </div>
-      </div> 
-   </section>
-        <!-- login-->
-        <div class="modal fade " tabindex="-1" id="login-modal">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title text-success">Welcome back!</h5>
-                <div>
-                  <p class="info">Enter your credential to login</p>
-                </div>
-              </div>
-              
-              <div class="modal-body bg-success">
-                <form>
-                  <div class="bg-success">
-                    <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                  </div>
-                  <div class="mb-3 bg-success">
-                    <label for="exampleInputPassword1" class="form-label"></label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="mb-3 form-check bg-success ">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label bg-success text-light small " for="exampleCheck1">Remember me</label>
-                  </div>
-                  <button type="submit" class="btn btn-success">Log in</button>
-
-                </form>
-              </div>
-              <div class="modal-footer">
-                <a href="#" class="text-success small m-3">Forgot password?</a>
-                <div class="m-3 small">
-                    <p>Don't have an account? <a   href="#" class="text-success">Sign up</a></p>
-                </div>
-              </div>    
-            </div>
+          <div class="progress-circle" data-degree="53" data-color="#04fc43">
+            <h2 class="number">53 <span>$</span></h2>
+            <h5 id="expense">Expense</h5>
           </div>
+    </div>
+      
+    <!-- input form -->
+      <form class="input-field" id="transaction-form">
+        <!-- category -->
+        <div class="col ">
+          <label for="category-input">Category:</label>
+          <select class="category-select" id="category-select">
+            <option selected></option>
+            <option value="1">Transport</option>
+            <option value="2">Food</option>
+            <option value="3">Rent</option>
+            <option value="4">Shopping</option>
+            <option value="5">Travel</option>
+            <option value="6">Beverage</option>
+            <option value="7">Salary</option>
+          </select>
         </div>
-        <!-- sign up -->
-        <div class="modal fade " tabindex="-1" id="signup-modal">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title text-success">SPENDWISE</h5>
-                <div>
-                  <p class="info">Create your own account!</p>
-                </div>
-              </div>
-              <div class="modal-body bg-success">
-                <form>
-                  <div class="mb-1">
-                    <label for="exampleInputUser" class="form-label"></label>
-                    <input type="text" class="form-control" id="exampleInputUser"  placeholder="Username">
-                  </div>
-                  <div class="mb-1">
-                    <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                  </div>
-                  <div class="mb-1">
-                    <label for="exampleInputPassword" class="form-label"></label>
-                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
-                  </div>
-                  <button type="submit" class="btn btn-success">Sign up</button>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <p>Or sign up using</p>
-                <div class="icon-box">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-              </div>     
-            </div>
-          </div>
+      <!-- amount -->
+        <div class="col"> 
+          <label for="amount-input">Amount:</label>
+          <input type="number" id="amount-input" class="amount-input" >
         </div>
-    </main>
- 
+      <!-- date -->
+        <div class="col">
+          <label for="date-input">Date:</label>
+          <input type="date" id="date-input" >
+        </div>
+      <!-- add button -->
+        <div class="input-button col">
+          <button type="submit" id="add-btn" class="add-btn">Add</button>
+        </div>
+      </form>
 
 
-
-
-    
-  <section class="footer-container">
-    <footer></footer>
-  </section>
 
   
-</body>
+   <!-- expenses list -->
+      <div class="expenses-list pb-1" id="expenses-list">
+        <h2 class="text-center">Expenses List</h2>
+        <table class="expenses-list-category" id="expenses-table">
+          <tr>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th></th>
+          </tr>
+          <!-- <tr class="new-expenses"  id="new-expenses">
+                  <td>Food</td>
+                  <td>1000</td>
+                  <td>6.07.2024</td>
+                  <td><button type="button" class="delete-btn btn-sm">Delete</button></td>
+          </tr>
+          <tr class="new-expenses"  id="new-expenses">
+                  <td>Rent</td>
+                  <td>1000</td>
+                  <td>6.07.2024</td>
+                  <td><button type="button" class="delete-btn btn-sm">Delete</button></td>
+          </tr> -->
+        </table>
+            
+        <!-- <tfoot class="table-group-divider">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total:</td>
+            <td id="total-amount"></td>
+          </tr>
+        </tfoot> -->
+      </div>
+
+      <hr class="mt-1">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <script src="script.js"></script>
+  </body>
 </html>

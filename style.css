@@ -1,138 +1,232 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-}
-
 body {
-  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
 }
 
-.item{
-  border: 0px solid ;
+.navbar-nav a{
+  color: #cee3d9;
 }
-.item-1{
-  position: absolute;
-  width: 16%;
-  height: 65%;
-  top: 15%;
-  right: 20%;
-  border-radius: 8%;
-}
-.item-1 img {
+
+.navbar{
   width: 100%;
-  height: 100%;
-  border-radius: 8%;
+  background: #3e3e3e;
+}
 
-}
-.item-2{
-  position: absolute;
-  width: 13%;
-  height: 25%;
-  bottom: 30%;
-  left: 55%;
-  border-radius: 8%;
-  flex-direction: column;
-  background-color: green;
-  color: antiquewhite;
-}
-.content {
-  width: 28%;
-  top: 15%;
-  left: 20%;
-  position: absolute;
+.user-container {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  color: #2c2c2c;
+  background: #beddce;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.user {
+  width: 30%;
+}
+.user p{
+  font-style: italic;
+}
+
+
+.progress-circle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
-} 
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
 
-.content h1 {
-  font-size: 5rem;
+.progress-circle::before{
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: #222;
+  opacity: 0.8;
 }
-.content a {
-  font-size: 2rem;
+.progress-circle::after{
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #333;
+  border: 15px solid #4d4c51;
+  border-radius: 50%;
+  box-shadow: inset 0 5px 10px rgba(0, gre0en, 0, 0.25),
+  0 10px 10px rgba(0, 0, 0, 0.75),
+  0 2px -2px rgba(255, 255, 255, 0.5),
+  inset 0 4px 2px rgba(0, 0, 0, 0.25), 
+  inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+  
 }
-/* nav */
-.navbar-brand img{
-  width: 100px;
-  margin-top: 3%;
-  margin-left: 10%;
+
+.progress-circle .number{
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  line-height: 10px;
+  font-size: 16px;
 }
-.nav-item a {
-  color: green;
-  text-decoration: none;
+.progress-circle .number span{
   font-size: 10px;
+  font-weight: 700;
 }
 
-.nav-item a:hover{
-  color:  #67d365;
-
-}
-.auth .btn{
+.progress-circle h5{
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  line-height: 8px;
   font-size: 10px;
-  line-height: 28px;
-  border-radius: 10px;
-  font-weight: 400;
-  padding: 0px 8px;
- } 
-
- .auth .login:hover{
-  color: #67d365;
+  text-transform: uppercase;
 }
 
 
-/* login */
 
+/* @media  screen and (max-width: 1000px) {
+  .user-container {
+    flex-direction: column;
+  }
+}
+@media  screen and (min-width: 1150px) {
+  .user-container {
+    font-size: 18px;
+  }
+}
+@media  screen and (max-width: 500px) {
+  .user-container {
+    font-size: 13px;
+  }
+} */
 
-.modal {
-  background: transparent !important;
-  margin-top: 5%;
-  overflow-x: hidden;
-  height: 100%;
-  width: 100%;
-}
-.modal-header{
-  flex-direction: column;
-}
-.info{
-  font-size: 15px;
+/* .user-container .total-amount-section{
+  width: 50%;
+  float: right;
   display: block;
-  margin-bottom: 3px;
+  text-align: center;
+  align-items: center; 
+  font-size: 20px;
+  font-weight: bold;
+} */
+/* .user-container .income-expenses {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
 }
+#income-amount{
+  color: #187d4e;
+}
+#expenses-amount{
+  color: #fa845d;
+} */
 form{
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ display: flex;
+flex-wrap: wrap;
+width: 100%;
+background-color:#187d4e;
+color: rgb(243, 241, 241);
+}
+
+form div {
+  place-items: center;
+  padding: 5%;
+  height: 30vh;
+  align-content: center;
+  justify-content:space-around;
+  
+}
+.category-select:focus-within{
+font-size: 14px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+input, label, select {
+  font-size:initial;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 50%;
+}
+.input-section input {
+  font-family: unset;
+  line-height: normal;
+ 
+} 
+.input-button{
+flex-direction: column;
+}
+.input-button .add-btn {
+  border-color: #f0f4f2;
+  background-color: #cee3d9;
+  border-radius: 4px;
+  padding: 1px 3px;
+}
+
+/* expenses list */
+
+
+.expenses-list{
+  flex-direction: column;
+  width: 100%;
+  background-color: #cee3d9;
+  color: #0a0c0b;
+}
+
+.expenses-list h2{
+  padding-top: 20px;
+  font-size: 24px;
+  letter-spacing: 3px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-transform: uppercase;
+}
+.new-expenses{
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 80%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-left: auto;
   margin-right: auto;
+  justify-content: space-evenly;
+  list-style-type: none;
+  background-color: #e8ecea;
+  color: #030303;
+  border: 3px  solid #f2f3f2;
+}
+
+.new-expenses th {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-transform: uppercase
+}
+.expenses-list-category{
   width: 80%;
-}
-.form-control::placeholder{
-  font-size: 10px;
-}
-.modal-content h5 {
- font-size: 20px;
- display: block;
+  background-color: #cee3d9;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
 }
 
-.social-icon {
-  color: #1a8754;
-  flex-direction: row;
-  font-size: larger;
-  text-decoration: none;
-}
-.modal-footer{
-  padding-left: 10%;
-  flex-direction: column;
-}
-
-.modal-footer a,p {
-  text-decoration: none;
+td button{
+  background-color: #187d4e;
+  border: #187d4e;
+  border-radius: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #cee3d9;
+  padding: 3px 5px;
+  font-size: 9px;
 }
 
-.modal-body button {
-  border: 0px solid green;
-  display: block;
-  margin: 0% auto;
-   width: fit-content;
-   margin-top: 15px;
+td button:hover{
+  background-color: #212529;
+  color: #cee3d9;
+
 }
